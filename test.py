@@ -2,6 +2,7 @@ import os
 import glob
 import argparse
 import matplotlib
+import cv2
 
 # Keras / TensorFlow
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
@@ -32,6 +33,14 @@ print('\nLoaded ({0}) images of size {1}.'.format(inputs.shape[0], inputs.shape[
 
 # Compute results
 outputs = predict(model, inputs)
+print(outputs.shape)
+j=0
+for i in outputs:
+  i=i.reshape((240,320))
+  print(i.shape)
+  plt.imsave('/content/results/img'+str(j)+'.jpg', i)
+  j=j+1
+  
 
 #matplotlib problem on ubuntu terminal fix
 #matplotlib.use('TkAgg')   
