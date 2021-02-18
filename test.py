@@ -38,7 +38,7 @@ j=0
 for i in outputs:
   i=i.reshape((240,320))
   print(i.shape)
-  plt.imsave('/content/results/img'+str(j)+'.jpg', i)
+  plt.imsave('/content/Voice_mine/results/img'+str(j)+'.jpg', i)
   j=j+1
   
 
